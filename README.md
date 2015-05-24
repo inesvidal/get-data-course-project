@@ -3,8 +3,15 @@
 Make sure you define your working directory with: 
 ```
 setwd("path")
-´´´
-'''setwd("path")'''
+```
+Check out this neat program I wrote:
+
+```
+x = 0
+x = 2 + 2
+what is x
+```
+
 ##Running the script##
 Execute the script:
 ```run_analysis(filename)```
