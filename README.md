@@ -1,11 +1,13 @@
-#Instructions to execute the "run_analysis" script#
+#Instructions to execute the script#
 ##Setting working directory##
 Make sure you define your working directory with: 
-```setwd("path")```
+```setwd("path")´´´
+'''setwd("path")'''
 ##Running the script##
 Execute the script:
-```run_analysis()```
-The script will download the source dataset (ZIP file). It will be saved in the working directory and a new directory *dataset* will be created with the unzipped files that contain the data.
+```run_analysis(filename)```
+*filename* is the name of a zip file that contains the Samsung data to be analysed. If the file is not provided, the script will download the source dataset (ZIP file). It will be saved in the working directory. 
+A new directory *dataset* will be created with the unzipped files that contain the data (using either the existing file or the downloaded file).
 The resulting tidy dataset will be stored in your working directory as a file *averages_dataset.txt*. This file can be loaded running: 
 ```url <- "https://s3.amazonaws.com/coursera-uploads/user-f96e983fe124cac29d52475b/973501/asst-3/bdca6c40020511e5b476a914a92fd179.txt"
 download.file(file_url, "./averages_dataset.txt", method = "curl")
@@ -13,7 +15,8 @@ tidy_data <- read.table("./averages_dataset.txt")
 View(tidy_data)```
 ##Process description###
 Data cleaning process:
-* Download the ZIP file
+* Check if the *filename* file exists in the working directory
+** If the file does not exist: download the ZIP file from the URL provided in the assignment description.
 * Decompress in a directory *dataset*
 * Keep only data files (move README and INFO files to parent directory)
 * Load all data files in a list of tables, one element for each file
