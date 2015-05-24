@@ -1,2 +1,31 @@
-# get-data-course-project
-Coursera Data Science courses, Get data course, project
+#Instructions to execute the "run_analysis" script#
+##Setting working directory##
+Make sure you define your working directory with: 
+```setwd("path")```
+##Running the script##
+Execute the script:
+```run_analysis()```
+The script will download the source dataset (ZIP file). It will be saved in the working directory and a new directory *dataset* will be created with the unzipped files that contain the data.
+The resulting tidy dataset will be stored in your working directory as a file *averages_dataset.txt*. This file can be loaded running: 
+```url <- "https://s3.amazonaws.com/coursera-uploads/user-f96e983fe124cac29d52475b/973501/asst-3/bdca6c40020511e5b476a914a92fd179.txt"
+download.file(file_url, "./averages_dataset.txt", method = "curl")
+tidy_data <- read.table("./averages_dataset.txt")
+View(tidy_data)```
+##Process description###
+Data cleaning process:
+* Download the ZIP file
+* Decompress in a directory *dataset*
+* Keep only data files (move README and INFO files to parent directory)
+* Load all data files in a list of tables, one element for each file
+* Generate list element names using file names without extensions
+* Merge significative data in test and train datasets (the files in the *Inertial Signal* folder have not been considered because they don't contain information about averages or standard deviations, and therefore would be discarded later, [see forum discussion](https://class.coursera.org/getdata-014/forum/thread?thread_id=30))
+** Include the variable names as column names, making sure they meet the conventions in R ((see ```?make.names``` for additional info).
+* Merge in *activity* and *subjects* information
+* Keep only the columns that refer to *averages (mean)* or standard deviations (std)*
+* Include descriptive activity names in the dataset
+* Remove columns with redundant data
+* Calculate the average of each column for each activity and individual.
+* Upload the dataset as a *txt file*
+##Additional considerations##
+* In the creation of the script "run_Analisys.R" the following considerations:* [Definition of Tidy data](https://class.coursera.org/getdata-014/forum/thread?thread_id=31)
+* The file Codebook.md describes the the variables in the dataset.
