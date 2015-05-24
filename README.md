@@ -32,7 +32,7 @@ Data cleaning process:
 * Keep only the columns that refer to *averages (mean)* or standard deviations (std)*
 * Include descriptive activity names in the dataset
 * Remove columns with redundant data
-* Calculate the average of each column for each activity and individual.
+* Calculate the average of each measure column for each activity and individual.
 * Upload the dataset as a *txt file*
 
 ##Additional considerations##
