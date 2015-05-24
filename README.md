@@ -1,7 +1,9 @@
 #Instructions to execute the script#
 ##Setting working directory##
 Make sure you define your working directory with: 
-```setwd("path")´´´
+```
+setwd("path")
+´´´
 '''setwd("path")'''
 ##Running the script##
 Execute the script:
