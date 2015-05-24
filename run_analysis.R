@@ -68,7 +68,7 @@ run_analysis <- function(filename = "getdata_projectfile_dataset.zip") {
     names <-names(dataset)
     valid_column <- gsub("\\.\\.", ".", names)
     valid_column_names <- make.names(valid_column, unique=TRUE, allow_ = TRUE)
-    valid_column_names <- gsub("...", ".", valid_column_names)
+    valid_column_names <- gsub("\.\.\.", "\.", valid_column_names)
     colnames(dataset) <- valid_column_names
     
     # To be able to run "dplyr" functions
