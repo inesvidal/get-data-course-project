@@ -20,14 +20,14 @@ View(tidy_data)
 ```
 ##Process description###
 Data cleaning process:
-* Check if the *filename* file exists in the working directory
-** If the file does not exist: download the ZIP file from the URL provided in the assignment description.
+* Check if the *filename.zip* file exists in the working directory
+    * If the file does not exist: download the ZIP file from the URL provided in the assignment description.
 * Decompress in a directory *dataset*
 * Keep only data files (move README and INFO files to parent directory)
 * Load all data files in a list of tables, one element for each file
 * Generate list element names using file names without extensions
 * Merge significative data in test and train datasets (the files in the *Inertial Signal* folder have not been considered because they don't contain information about averages or standard deviations, and therefore would be discarded later, [see forum discussion](https://class.coursera.org/getdata-014/forum/thread?thread_id=30))
-** Include the variable names as column names, making sure they meet the conventions in R ((see ```?make.names``` for additional info).
+    * Include the variable names as column names, making sure they meet the conventions in R ((see *?make.names* for additional information).
 * Merge in *activity* and *subjects* information
 * Keep only the columns that refer to *averages (mean)* or standard deviations (std)*
 * Include descriptive activity names in the dataset
