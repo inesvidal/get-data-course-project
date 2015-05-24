@@ -9,15 +9,19 @@
 # From the data set in step 4, creates a second, independent tidy data set with 
 # the average of each variable for each activity and each subject.
 
-run_analysis <- function() {
+run_analysis <- function(filename = "getdata_projectfile_dataset.zip") {
     
-    ### Getting the dataset, and unzipping the files
-    file_url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-    
-    download.file(file_url, "./getdata_projectfile_dataset.zip", method = "curl")
-    date_downloaded <- date()
+    # Checking if the data is available in the working directory
+    if (!file.exists(filename)) {
+        print("INFO: zip file not found")
+        ### Getting the dataset, and unzipping the files
+        file_url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+        
+        download.file(file_url, "./getdata_projectfile_dataset.zip", method = "curl")
+        date_downloaded <- date()
+    }
     # unziping the files
-    unzip ("getdata_projectfile_dataset.zip", exdir = "./dataset/", junkpaths = TRUE)
+    unzip (filename, exdir = "./dataset/", junkpaths = TRUE)
     
     setwd("./dataset")
     
@@ -64,6 +68,7 @@ run_analysis <- function() {
     names <-names(dataset)
     valid_column <- gsub("\\.\\.", ".", names)
     valid_column_names <- make.names(valid_column, unique=TRUE, allow_ = TRUE)
+    valid_column_names <- gsub("...", ".", valid_column_names)
     colnames(dataset) <- valid_column_names
     
     # To be able to run "dplyr" functions
@@ -95,6 +100,12 @@ run_analysis <- function() {
     averages_tidy_dataset <- tidy_data %>%
         group_by (activity, subject) %>%  # group by activity and subject
         summarise_each(funs(mean))        # calculate averages for all columns except the ones we are grouping by
+    
+    # Update column names to reflect the changes to the variables
+    # Variables now represent averages
+    columns <- names(averages_tidy_dataset) 
+    columns[3:length(columns)] <- paste(columns[3:length(columns)], sep = ".", "mean")
+    names(averages_tidy_dataset) <- columns
     
     # upload your data set as a txt file created with write.table() using row.name=FALSE
     setwd("./../")
