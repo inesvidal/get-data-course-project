@@ -4,7 +4,7 @@ Considering the modifications described in the file [README.md](https://github.c
 
 ## Data description ##
 
-The dataset has been produced from a raw dataset containing measures of sensors in a mobile device for 30 individuals performing 6 different activities. With the processing described in the file [README.md](https://github.com/inesvidal/get-data-course-project/blob/master/README.md) we have obtained average measures (per activity and per subject (person)) of 79 different variables from the original dataset (see description below).
+The dataset has been produced from a raw dataset containing measures of sensors in a mobile device for 30 individuals performing 6 different activities. With the processing described in the file [README.md](https://github.com/inesvidal/get-data-course-project/blob/master/README.md) we have obtained averages for  measures (per activity and per subject (person)) of 79 different variables (all variables related to average and standard deviation) from the original dataset (see description below).
 
 ###Identifiers###
 
@@ -14,7 +14,7 @@ The dataset has been produced from a raw dataset containing measures of sensors 
 ###Measures###
 They represent the average (per activity and per subject) of the corresponding variable in the original/raw dataset.
 The original measures were normalised [-1,+1], so their averages will also be. The variable names contain the original variable name and a suffix ".mean" to make clear that they are synthetic variables.
-The meaning of each variable can be deduced from the observation of the original dataset (see below).
+The meaning of each variable can be deduced from the observation of the [original dataset](https://github.com/inesvidal/get-data-course-project/blob/master/CodeBook.md#the-originalraw-datset).
 
 3. tBodyAcc.mean.X.mean
 4. tBodyAcc.mean.Y.mean
