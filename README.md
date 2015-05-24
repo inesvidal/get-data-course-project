@@ -34,6 +34,7 @@ Data cleaning process:
 * Remove columns with redundant data
 * Calculate the average of each column for each activity and individual.
 * Upload the dataset as a *txt file*
+
 ##Additional considerations##
 * In the creation of the script "run_Analisys.R" I have followed the conclussions of the [discussion on Tidy dataon the course Forums](https://class.coursera.org/getdata-014/forum/thread?thread_id=31)
 * The file [Codebook.md](https://github.com/inesvidal/get-data-course-project/blob/master/CodeBook.md) describes the the variables in the dataset.
