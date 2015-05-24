@@ -26,7 +26,7 @@ Data cleaning process:
 * Keep only data files (move README and INFO files to parent directory)
 * Load all data files in a list of tables, one element for each file
 * Generate list element names using file names without extensions
-* Merge significative data in test and train datasets (the files in the *Inertial Signal* folder have not been considered because they don't contain information about averages or standard deviations, and therefore would be discarded later, [see forum discussion](https://class.coursera.org/getdata-014/forum/thread?thread_id=30))
+* Merge significative data in test and train datasets (the files in the *Inertial Signal* folder have not been considered because they don't contain information about averages or standard deviations, and therefore would be discarded later, [see the course Forum discussion](https://class.coursera.org/getdata-014/forum/thread?thread_id=30))
     * Include the variable names as column names, making sure they meet the conventions in R ((see *?make.names* for additional information).
 * Merge in *activity* and *subjects* information
 * Keep only the columns that refer to *averages (mean)* or standard deviations (std)*
@@ -34,6 +34,7 @@ Data cleaning process:
 * Remove columns with redundant data
 * Calculate the average of each column for each activity and individual.
 * Upload the dataset as a *txt file*
+
 ##Additional considerations##
-* In the creation of the script "run_Analisys.R" I have followed the conclussions of the [discussion on Tidy dataon the course Forums](https://class.coursera.org/getdata-014/forum/thread?thread_id=31)
-* The file Codebook.md describes the the variables in the dataset.
+* In the creation of the script "run_Analisys.R" I have followed the conclussions of the [discussion on Tidy data on the course Forums](https://class.coursera.org/getdata-014/forum/thread?thread_id=31)
+* The file [Codebook.md](https://github.com/inesvidal/get-data-course-project/blob/master/CodeBook.md) describes the the variables in the dataset.
